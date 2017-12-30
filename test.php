@@ -1,18 +1,5 @@
 <?php
-//导入page.class.php文件
-include 'Page.class.php';
-$pdo=new PDO("mysql:host=localhost;dbname=demo","root","");
-$pdo->query("set names utf8");
-$total=$pdo->query("select * from member")->rowCount();
-//echo $total;
-//实例化分页类，传总记录数
-$page=new Page($total,3);
-$sql="select * from member ".$page->limit;
-$result=$pdo->query($sql);
-$data=$result->fetchAll(PDO::FETCH_OBJ);
-//echo "<pre>";
-//var_dump($data);
-//echo "</pre>";
+123
 foreach($data as $key=>$value){
     echo $value->username."<br>";
     //var_dump($value);
